@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvluxpuwhii2n"]
+
+[ext_resource type="Texture2D" uid="uid://ddaeo3y5kyk24" path="res://Assets/ballGrey.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://7yetskv8qk1v" path="res://Assets/ballBlue.png" id="2"]
+
+[node name="Indicator" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2")
