@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://batxdldth7p7h"]
 
 [ext_resource type="Script" path="res://Paddle/Paddle.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://0iojx6lbp8ty" path="res://Assets/paddleRed.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://c0nbg64c0rcfv" path="res://Assets/paddleBlu.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://cixtu8r5bpqx0" path="res://Assets/confetti.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://qwp54whd5n18" path="res://Assets/paddleRed.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bco6br2thuibu" path="res://Assets/paddleBlu.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://deecov50lywl3" path="res://Assets/confetti.png" id="4"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(100, 20)

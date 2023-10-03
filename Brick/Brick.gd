@@ -14,6 +14,10 @@ var tween
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	position = new_position
+	position.x = new_position.x
+	position.y = -100
+	tween = create_tween()
+	tween.tween_property(self, "position", new_position, 0.5 + randf()*2).set_trans(Tween.TRANS_BOUNCE)
 	if score >= 100:
 		$ColorRect.color = Color8(224,49,49)
 	elif score >= 90:
@@ -44,3 +48,11 @@ func die():
 	Global.update_score(score)
 	get_parent().check_level()
 	$Confetti.emitting = true
+	if tween:
+		tween.kill()
+	tween = create_tween().set_parallel(true)
+	tween.tween_property(self, "position", Vector2(position.x, 1000), time_fall).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "rotation", -PI + randf()*2*PI, time_rotate).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($ColorRect, "color:a", 0 , time_a)
+	tween.tween_property($ColorRect, "color:s", 0 , time_s)
+	tween.tween_property($ColorRect, "color:v", 0 , time_v)

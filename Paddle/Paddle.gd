@@ -21,3 +21,11 @@ func _input(event):
 
 func hit(_ball):
 	$Confetti.emitting = true
+	if tween:
+		tween.kill()
+	tween = create_tween().set_parallel(true)
+	$Images/Highlight.modulate.a = 1.0
+	tween.tween_property($Images/Highlight, "modulate:a", 0, time_highlight)
+	$Images/Highlight.scale = Vector2(1.5,1.5)
+	tween.tween_property($Images/Highlight, "scale", Vector2(1,1), time_highlight_size).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
+	
